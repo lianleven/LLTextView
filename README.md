@@ -5,12 +5,12 @@
 [![Platform](https://img.shields.io/cocoapods/p/LLTextView.svg?style=flat)](https://cocoapods.org/pods/LLTextView)
 
 ## Features
-- [x] 支持 设置最大输入字符串长度 maxStringLength.
-- [x] 支持placeholder 和 placeholderColor。
+- [x] 支持 设置最大输入字符串长度 <span style="color:blue"> maxStringLength </span>.
+- [x] 支持 <span style="color:blue"> placeholder </span> 和 <span style="color:blue"> placeholderColor </span>
 
 ## Installation
 
-只需将以下行添加到您的**Podfile**
+只需将以下行添加到您的 **Podfile**
 
 ```ruby
 pod 'LLTextView'
@@ -36,6 +36,7 @@ pod 'LLTextView'
 LLTextView *textView = [LLTextView new];
 textView.placeHolder = @"请输入字符串";
 textView.placeHolderColor = [UIColor lightGrayColor];
+textView.maxStingLength = 50;
 
 ```
 
