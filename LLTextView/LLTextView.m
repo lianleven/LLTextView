@@ -185,6 +185,9 @@
         if ([textView.text length] > self.maxStringLength) {
             textView.text = [textView.text substringToIndex:self.maxStringLength];
         }
+        if (self.didChangeBlock) {
+            self.didChangeBlock(self, self.maxStringLength - [textView.text length]);
+        }
     }
 }
 

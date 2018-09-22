@@ -10,12 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class LLTextView;
+
+typedef void(^LLTextViewDidChangeBlock)(LLTextView *textView, NSUInteger remainderLength);
+
 @interface LLTextView : UITextView
 
 @property (nonatomic, copy, nullable) NSString *placeHolder;
 @property (nonatomic, strong) UIColor *placeHolderColor;
 
 @property (nonatomic, assign) NSUInteger maxStringLength;
+@property (nonatomic, copy) LLTextViewDidChangeBlock didChangeBlock;
 
 /**
  *  The default value is `UIEdgeInsets(5.0, 7.0, 5.0, 7.0)`.

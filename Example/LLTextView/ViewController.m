@@ -27,6 +27,9 @@
     [self.textView layout_right:-12 toView:self.view];
     [self.textView layout_top:80 toView:self.view];
     
+    self.textView.didChangeBlock = ^(LLTextView * _Nonnull textView, NSUInteger remainderLength) {
+        NSLog(@"还能输入 %@ 字符长度",@(remainderLength));
+    };
     
 }
 
