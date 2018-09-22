@@ -10,10 +10,6 @@
 
 @interface LLTextView()
 
-@property (nonatomic, weak) NSLayoutConstraint *heightConstraint;
-@property (nonatomic, weak) NSLayoutConstraint *minHeightConstraint;
-@property (nonatomic, weak) NSLayoutConstraint *maxHeightConstraint;
-
 @end
 
 @implementation LLTextView
@@ -23,24 +19,16 @@
 
 - (void) configureTextView
 {
-//    [self setTranslatesAutoresizingMaskIntoConstraints:NO];
-//    
-//    CGFloat cornerRadius = 6.0f;
-//
     
-    self.backgroundColor = [UIColor whiteColor];
-    self.layer.borderWidth = 0.5f;
-    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.textContainerInset = UIEdgeInsetsMake(4.0f, 2.0f, 4.0f, 2.0f);
+    self.contentInset = UIEdgeInsetsMake(0, 0, 20, 0);
     self.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     self.contentMode = UIViewContentModeRedraw;
-//    
+   
     self.text = nil;
     _placeHolder = nil;
     _placeHolderColor = [UIColor lightGrayColor];
     _placeHolderInsets = UIEdgeInsetsMake(5.0, 7.0, 5.0, 7.0);
-//
-//    [self associateConstraints];
     
     [self  addTextViewNotificationObservers];
 }
@@ -63,44 +51,6 @@
 - (void)dealloc
 {
     [self  removeTextViewNotificationObservers];
-}
-
-// TODO: we should just set these from the xib
-- (void)associateConstraints
-{
-    // iterate through all text view's constraints and identify
-    // height, max height and min height constraints.
-    
-    for (NSLayoutConstraint *constraint in self.constraints) {
-        if (constraint.firstAttribute == NSLayoutAttributeHeight) {
-            
-            if (constraint.relation == NSLayoutRelationEqual) {
-                self.heightConstraint = constraint;
-            }
-            
-            else if (constraint.relation == NSLayoutRelationLessThanOrEqual) {
-                self.maxHeightConstraint = constraint;
-            }
-            
-            else if (constraint.relation == NSLayoutRelationGreaterThanOrEqual) {
-                self.minHeightConstraint = constraint;
-            }
-        }
-    }
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    CGSize sizeThatFits = [self sizeThatFits:self.frame.size];
-    float newHeight = sizeThatFits.height;
-    if (self.maxHeightConstraint) {
-        newHeight = MIN(newHeight, self.maxHeightConstraint.constant);
-    }
-    if (self.minHeightConstraint) {
-        newHeight = MAX(newHeight, self.minHeightConstraint.constant);
-    }
-    self.heightConstraint.constant = newHeight;
 }
 
 #pragma mark - Setters
@@ -223,6 +173,19 @@
 - (void) didReceiveTextViewNotification:(NSNotification *)notification
 {
     [self setNeedsDisplay];
+    // limit count
+    if ([notification.name isEqualToString:UITextViewTextDidChangeNotification]) {
+        UITextView *textView = notification.object;
+        if (!textView || ![textView isKindOfClass:[UITextView class]]) return;
+        UITextRange *markedTextRange = textView.markedTextRange;
+        if ([textView positionFromPosition:markedTextRange.start offset:0] != nil) {
+            return;
+        }
+        if (self.maxStringLength == 0) return;
+        if ([textView.text length] > self.maxStringLength) {
+            textView.text = [textView.text substringToIndex:self.maxStringLength];
+        }
+    }
 }
 
 #pragma mark - Utilities

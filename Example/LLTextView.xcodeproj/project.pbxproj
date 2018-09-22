@@ -14,9 +14,12 @@
 		5C05CAFC214B8EBA00ED5ECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C05CAFA214B8EBA00ED5ECB /* LaunchScreen.storyboard */; };
 		5C05CAFF214B8EBA00ED5ECB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C05CAFE214B8EBA00ED5ECB /* main.m */; };
 		5C05CB08214B8F1500ED5ECB /* LLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C05CB07214B8F1500ED5ECB /* LLTextView.m */; };
+		94A74891DC72BF73E9AAAB5F /* libPods-LLTextView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE3C69CC036E7CFDED08FBE /* libPods-LLTextView.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B4F777FCF7A3A31CE1E2817 /* Pods-LLTextView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLTextView.release.xcconfig"; path = "Target Support Files/Pods-LLTextView/Pods-LLTextView.release.xcconfig"; sourceTree = "<group>"; };
+		520C176F36EF37BD04D48897 /* Pods-LLTextView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLTextView.debug.xcconfig"; path = "Target Support Files/Pods-LLTextView/Pods-LLTextView.debug.xcconfig"; sourceTree = "<group>"; };
 		5C05CAEC214B8EB900ED5ECB /* LLTextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLTextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C05CAEF214B8EB900ED5ECB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5C05CAF0214B8EB900ED5ECB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -29,6 +32,7 @@
 		5C05CAFE214B8EBA00ED5ECB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5C05CB06214B8F1500ED5ECB /* LLTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLTextView.h; sourceTree = "<group>"; };
 		5C05CB07214B8F1500ED5ECB /* LLTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLTextView.m; sourceTree = "<group>"; };
+		FBE3C69CC036E7CFDED08FBE /* libPods-LLTextView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LLTextView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94A74891DC72BF73E9AAAB5F /* libPods-LLTextView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +52,8 @@
 			children = (
 				5C05CAEE214B8EB900ED5ECB /* LLTextView */,
 				5C05CAED214B8EB900ED5ECB /* Products */,
+				87AD5F31A9157660D3ACD7B1 /* Pods */,
+				6220E6C4C7BB87A0679839DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +92,24 @@
 			path = ../../LLTextView;
 			sourceTree = "<group>";
 		};
+		6220E6C4C7BB87A0679839DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FBE3C69CC036E7CFDED08FBE /* libPods-LLTextView.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87AD5F31A9157660D3ACD7B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				520C176F36EF37BD04D48897 /* Pods-LLTextView.debug.xcconfig */,
+				0B4F777FCF7A3A31CE1E2817 /* Pods-LLTextView.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -92,6 +117,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C05CB02214B8EBA00ED5ECB /* Build configuration list for PBXNativeTarget "LLTextView" */;
 			buildPhases = (
+				4D11C6C7585CFCB589055F47 /* [CP] Check Pods Manifest.lock */,
 				5C05CAE8214B8EB900ED5ECB /* Sources */,
 				5C05CAE9214B8EB900ED5ECB /* Frameworks */,
 				5C05CAEA214B8EB900ED5ECB /* Resources */,
@@ -149,6 +175,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4D11C6C7585CFCB589055F47 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LLTextView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5C05CAE8214B8EB900ED5ECB /* Sources */ = {
@@ -296,9 +347,11 @@
 		};
 		5C05CB03214B8EBA00ED5ECB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 520C176F36EF37BD04D48897 /* Pods-LLTextView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 23L8QXV2FB;
 				INFOPLIST_FILE = LLTextView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -313,9 +366,11 @@
 		};
 		5C05CB04214B8EBA00ED5ECB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B4F777FCF7A3A31CE1E2817 /* Pods-LLTextView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 23L8QXV2FB;
 				INFOPLIST_FILE = LLTextView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

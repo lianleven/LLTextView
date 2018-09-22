@@ -1,0 +1,16 @@
+PODS:
+  - ViewLayout (0.1.2)
+
+DEPENDENCIES:
+  - ViewLayout
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ViewLayout
+
+SPEC CHECKSUMS:
+  ViewLayout: 844fcb75cdf9f85b90d8c0c61afc217a6235ae28
+
+PODFILE CHECKSUM: ee1d5b3dbddfc9d5579d430ce54e89bd0264c8f3
+
+COCOAPODS: 1.6.0.beta.1
