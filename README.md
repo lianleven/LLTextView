@@ -5,9 +5,8 @@
 [![Platform](https://img.shields.io/cocoapods/p/LLTextView.svg?style=flat)](https://cocoapods.org/pods/LLTextView)
 
 ## Features
-- [x] 改变 UIAlertController title and message 的字体和颜色
-- [x] 改变 UIAlertAction title的颜色.
-- [x] 简便的弹出。
+- [x] 支持 设置最大输入字符串长度 maxStringLength.
+- [x] 支持placeholder 和 placeholderColor。
 
 ## Installation
 
