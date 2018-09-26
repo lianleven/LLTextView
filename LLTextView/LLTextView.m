@@ -30,7 +30,7 @@
     _placeHolderColor = [UIColor lightGrayColor];
     _placeHolderInsets = UIEdgeInsetsMake(5.0, 7.0, 5.0, 7.0);
     
-    [self  addTextViewNotificationObservers];
+    [self addTextViewNotificationObservers];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer
@@ -41,11 +41,11 @@
     }
     return self;
 }
-
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    [self  configureTextView];
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]) {
+        [self  configureTextView];
+    }
+    return self;
 }
 
 - (void)dealloc
@@ -119,6 +119,21 @@
 {
     [super setTextAlignment:textAlignment];
     [self setNeedsDisplay];
+}
+
+- (void)setBorderWidth:(CGFloat)borderWidth{
+    _borderWidth = borderWidth;
+    self.layer.borderWidth = borderWidth;
+    
+    self.layer.cornerRadius = 4.0f;
+}
+- (void)setCornerRadius:(CGFloat)cornerRadius{
+    _cornerRadius = cornerRadius;
+    self.layer.cornerRadius = cornerRadius;
+}
+- (void)setBorderColor:(UIColor *)borderColor{
+    _borderColor = borderColor;
+    self.layer.borderColor = borderColor.CGColor;
 }
 
 #pragma mark - Drawing

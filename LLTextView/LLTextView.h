@@ -10,16 +10,28 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, LLTextViewMaxLengthType){
+    LLTextViewMaxLengthTypeCustom = 0,
+    LLTextViewMaxLengthTypeDefault = 1,
+};
+
 @class LLTextView;
 
 typedef void(^LLTextViewDidChangeBlock)(LLTextView *textView, NSUInteger remainderLength);
 
+IB_DESIGNABLE
 @interface LLTextView : UITextView
 
-@property (nonatomic, copy, nullable) NSString *placeHolder;
-@property (nonatomic, strong) UIColor *placeHolderColor;
+@property (nonatomic, copy, nullable) IBInspectable NSString *placeHolder;
+@property (nonatomic, strong) IBInspectable UIColor *placeHolderColor;
 
-@property (nonatomic, assign) NSUInteger maxStringLength;
+@property (nonatomic, assign) IBInspectable NSUInteger maxStringLength;
+
+// border configure
+@property (nonatomic, assign) IBInspectable CGFloat borderWidth;
+@property (nonatomic, assign) IBInspectable CGFloat cornerRadius;
+@property (nonatomic, strong) IBInspectable UIColor *borderColor;
+
 @property (nonatomic, copy) LLTextViewDidChangeBlock didChangeBlock;
 
 /**

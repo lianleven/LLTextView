@@ -55,7 +55,7 @@
         textView.layer.borderColor = [UIColor lightGrayColor].CGColor;
         textView.layer.cornerRadius = 4.0f;
         textView.delegate = self;
-        textView.maxStringLength = 10;
+        textView.maxStringLength = 10000;
         _textView = textView;
     }
     return _textView;
