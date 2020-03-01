@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LLTextView'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'set the placeHolder and placeholderColor of the UITextView, and can set the maximum character length'
 
 # This description is used to generate tags and improve search results.

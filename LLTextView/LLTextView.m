@@ -100,25 +100,34 @@
 - (void)setText:(NSString *)text
 {
     [super setText:text];
-    [self setNeedsDisplay];
+    if ([text length] == 0) {
+        [self setNeedsDisplay];
+    }
+    
 }
 
 - (void)setAttributedText:(NSAttributedString *)attributedText
 {
     [super setAttributedText:attributedText];
-    [self setNeedsDisplay];
+    if ([self.text length] == 0) {
+        [self setNeedsDisplay];
+    }
 }
 
 - (void)setFont:(UIFont *)font
 {
     [super setFont:font];
-    [self setNeedsDisplay];
+    if ([self.text length] == 0) {
+        [self setNeedsDisplay];
+    }
 }
 
 - (void)setTextAlignment:(NSTextAlignment)textAlignment
 {
     [super setTextAlignment:textAlignment];
-    [self setNeedsDisplay];
+    if ([self.text length] == 0) {
+        [self setNeedsDisplay];
+    }
 }
 
 - (void)setBorderWidth:(CGFloat)borderWidth{
@@ -187,7 +196,9 @@
 
 - (void) didReceiveTextViewNotification:(NSNotification *)notification
 {
-    [self setNeedsDisplay];
+    if ([self.text length] == 0) {
+        [self setNeedsDisplay];
+    }
     // limit count
     if ([notification.name isEqualToString:UITextViewTextDidChangeNotification]) {
         UITextView *textView = notification.object;

@@ -106,7 +106,6 @@
 				520C176F36EF37BD04D48897 /* Pods-LLTextView.debug.xcconfig */,
 				0B4F777FCF7A3A31CE1E2817 /* Pods-LLTextView.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -351,14 +350,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 23L8QXV2FB;
+				DEVELOPMENT_TEAM = FALLEC93LS;
 				INFOPLIST_FILE = LLTextView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.LianLeven.LLTextView;
+				PRODUCT_BUNDLE_IDENTIFIER = tv.rcshow.appstore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -370,14 +369,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 23L8QXV2FB;
+				DEVELOPMENT_TEAM = FALLEC93LS;
 				INFOPLIST_FILE = LLTextView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.LianLeven.LLTextView;
+				PRODUCT_BUNDLE_IDENTIFIER = tv.rcshow.appstore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
