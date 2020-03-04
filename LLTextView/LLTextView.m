@@ -196,9 +196,7 @@
 
 - (void) didReceiveTextViewNotification:(NSNotification *)notification
 {
-    if ([self.text length] == 0) {
-        [self setNeedsDisplay];
-    }
+    [self setNeedsDisplay];
     // limit count
     if ([notification.name isEqualToString:UITextViewTextDidChangeNotification]) {
         UITextView *textView = notification.object;
